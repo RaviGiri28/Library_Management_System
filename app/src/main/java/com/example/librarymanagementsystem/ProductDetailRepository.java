@@ -1,10 +1,12 @@
 package com.example.librarymanagementsystem;
 
+import android.util.Log;
+
 import java.util.HashMap;
 import java.util.Map;
 
 public class ProductDetailRepository {
-    private static final Map<String, ProductDetails> productDetailsMap = new HashMap<>();
+    static final Map<String, ProductDetails> productDetailsMap = new HashMap<>();
 
     static {
         productDetailsMap.put("SC", new ProductDetails("Science", "Science category details"));
@@ -15,6 +17,18 @@ public class ProductDetailRepository {
     }
 
     public static ProductDetails getProductDetailsForUser(String username) {
-        return productDetailsMap.get(username.substring(0, 2));
+        String key = username.trim().substring(0, 2).toUpperCase();
+        Log.d("ProductDetailRepository", "Searching for key: " + key);
+
+        ProductDetails productDetails = productDetailsMap.get(key);
+
+        if (productDetails == null) {
+            Log.d("ProductDetailRepository", "Product details not found for key: " + key);
+            productDetails = new ProductDetails("N/A", "Product details not found");
+        } else {
+            Log.d("ProductDetailRepository", "Product details found: " + productDetails.getCategory());
+        }
+
+        return productDetails;
     }
 }
