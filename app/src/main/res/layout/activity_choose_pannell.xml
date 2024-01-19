@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/chooseimg"
+    tools:context=".Choose_pannell">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/adminbtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/newbtndsgn"
+        android:backgroundTint="@color/white"
+        android:clickable="true"
+        android:fontFamily="serif"
+        android:padding="14dp"
+        android:text="Admin"
+        android:textAllCaps="false"
+        android:textColor="#f2a02b"
+        android:textSize="22dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.669"
+        app:layout_constraintWidth_percent=".6" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/userbtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/newbtndsgn"
+        android:backgroundTint="#56DDA34C"
+        android:clickable="true"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:padding="14dp"
+        android:text="User"
+        android:textAllCaps="false"
+        android:textColor="#CF5640"
+        android:textSize="22dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.792"
+        app:layout_constraintWidth_percent=".6" />
+
+    <ImageView
+        android:id="@+id/boygirlimg"
+        android:layout_width="307dp"
+        android:layout_height="579dp"
+        android:src="@drawable/boygirlbook"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/userbtn"
+        app:layout_constraintStart_toStartOf="@+id/userbtn"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.605" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
