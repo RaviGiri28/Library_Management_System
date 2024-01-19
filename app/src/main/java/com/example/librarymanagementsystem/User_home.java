@@ -1,8 +1,12 @@
 package com.example.librarymanagementsystem;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
-import android.util.Log;
+import android.util.TypedValue;
+import android.view.Gravity;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -26,32 +30,52 @@ public class User_home extends AppCompatActivity {
     private void displayProductDetails(String productDetails) {
         TableLayout tableLayout = findViewById(R.id.tableLayout);
 
-        // Display the main header
+        // Add main header row for categories
+        TableRow mainHeaderRow = new TableRow(this);
+
+        // Display "Product Details"
+        TextView mainHeaderDetails = new TextView(this);
+        mainHeaderDetails.setText("Product Details");
+        mainHeaderDetails.setPadding(16, 16, 16, 16);
+        mainHeaderDetails.setGravity(Gravity.CENTER); // Center the text horizontally
+        mainHeaderDetails.setBackgroundColor(Color.parseColor("#CCCCCC")); // Set background color
+        mainHeaderDetails.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18); // Set text size
+        mainHeaderDetails.setTypeface(null, Typeface.BOLD); // Set text style
+        mainHeaderRow.addView(mainHeaderDetails);
+
+        mainHeaderRow.setGravity(Gravity.CENTER_HORIZONTAL); // Center the TableRow horizontally
+        tableLayout.addView(mainHeaderRow);
+
+        // Add header row for categories
         TableRow headerRow = new TableRow(this);
 
-        // Display "Code No From" header
-        TextView codeFromHeaderTextView = new TextView(this);
-        codeFromHeaderTextView.setText("Code No From");
-        codeFromHeaderTextView.setPadding(16, 16, 16, 16);
-        headerRow.addView(codeFromHeaderTextView);
+        // Display "Code No From"
+        TextView headerFrom = new TextView(this);
+        headerFrom.setText("Code No From");
+        headerFrom.setPadding(16, 16, 16, 16);
+        headerFrom.setBackgroundColor(Color.parseColor("#CCCCCC")); // Set background color
+        headerRow.addView(headerFrom);
 
-        // Display "Code No To" header
-        TextView codeToHeaderTextView = new TextView(this);
-        codeToHeaderTextView.setText("Code No To");
-        codeToHeaderTextView.setPadding(16, 16, 16, 16);
-        headerRow.addView(codeToHeaderTextView);
+        // Display "Code No To"
+        TextView headerTo = new TextView(this);
+        headerTo.setText("Code No To");
+        headerTo.setPadding(16, 16, 16, 16);
+        headerTo.setBackgroundColor(Color.parseColor("#CCCCCC")); // Set background color
+        headerRow.addView(headerTo);
 
-        // Display "Category" header
-        TextView categoryHeaderTextView = new TextView(this);
-        categoryHeaderTextView.setText("Category");
-        categoryHeaderTextView.setPadding(16, 16, 16, 16);
-        headerRow.addView(categoryHeaderTextView);
+        // Display "Category"
+        TextView headerCategory = new TextView(this);
+        headerCategory.setText("Category");
+        headerCategory.setPadding(16, 16, 16, 16);
+        headerCategory.setBackgroundColor(Color.parseColor("#CCCCCC")); // Set background color
+        headerRow.addView(headerCategory);
 
-        // Display "Details" header
-        TextView detailsHeaderTextView = new TextView(this);
-        detailsHeaderTextView.setText("Details");
-        detailsHeaderTextView.setPadding(16, 16, 16, 16);
-        headerRow.addView(detailsHeaderTextView);
+        // Display "Product Details"
+        TextView headerDetails = new TextView(this);
+        headerDetails.setText("Details");
+        headerDetails.setPadding(16, 16, 16, 16);
+        headerDetails.setBackgroundColor(Color.parseColor("#CCCCCC")); // Set background color
+        headerRow.addView(headerDetails);
 
         tableLayout.addView(headerRow);
 
@@ -85,7 +109,7 @@ public class User_home extends AppCompatActivity {
                 categoryTextView.setPadding(16, 16, 16, 16);
                 tableRow.addView(categoryTextView);
 
-                // Display "Details"
+                // Display "Product Details"
                 TextView detailsTextView = new TextView(this);
                 detailsTextView.setText(entry.getValue().getDetails());
                 detailsTextView.setPadding(16, 16, 16, 16);

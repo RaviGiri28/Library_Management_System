@@ -13,7 +13,7 @@ public class ProductDetailRepository {
         productDetailsMap.put("EC", new ProductDetails("Economics", "Economics category details"));
         productDetailsMap.put("FC", new ProductDetails("Fiction", "Fiction category details"));
         productDetailsMap.put("CH", new ProductDetails("Children", "Children category details"));
-        productDetailsMap.put("PD", new ProductDetails("Personal Development", "Personal Development category details"));
+        productDetailsMap.put("PD", new ProductDetails("PD", "Personal Development category details"));
     }
 
     public static ProductDetails getProductDetailsForUser(String username) {
