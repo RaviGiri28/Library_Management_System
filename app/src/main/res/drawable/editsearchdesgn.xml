@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#F1F1F1" /> <!-- Background color -->
+            <corners android:radius="8dp" /> <!-- Corner radius -->
+        </shape>
+    </item>
+    <item android:right="8dp">
+        <bitmap android:src="@android:drawable/ic_menu_search"/> <!-- Search icon -->
+        android:tint="@android:color/darker_gray" <!-- Tint color for the icon -->
+        android:gravity="center" />
+    </item>
+</layer-list>
