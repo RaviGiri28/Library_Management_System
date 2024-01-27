@@ -4,21 +4,44 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".User_home">
+    tools:context=".Admin_home">
 
-    <HorizontalScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-        <TableLayout
-            android:id="@+id/tableLayout2"
-            android:layout_width="wrap_content"
+        <!-- Search Bar -->
+        <EditText
+            android:id="@+id/searchEditText"
+            android:layout_width="330dp"
             android:layout_height="wrap_content"
-            android:padding="16dp"
-            android:background="#FFFFFF">
+            android:hint="Search Book"
+            android:layout_marginLeft="16dp"
+            android:elevation="8dp"
+            android:layout_marginTop="15dp"
+            android:textColor="@color/black"
+            android:background="@drawable/editdsgn"
+            android:padding="8dp"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:drawableStart="@android:drawable/ic_menu_search"
+            android:drawablePadding="8dp"/>
 
-            <!-- Add your TableRows and TextViews here -->
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        </TableLayout>
-    </HorizontalScrollView>
+            <TableLayout
+                android:id="@+id/tableLayout2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:background="#FFFFFF">
+
+                <!-- Add your TableRows and TextViews here -->
+
+            </TableLayout>
+        </HorizontalScrollView>
+    </LinearLayout>
 </RelativeLayout>
