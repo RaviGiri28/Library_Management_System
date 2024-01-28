@@ -31,4 +31,19 @@ public class ProductDetailRepository {
 
         return productDetails;
     }
+    public static Map<String, ProductDetails> getFilteredProducts(String searchQuery) {
+        Map<String, ProductDetails> filteredProducts = new HashMap<>();
+
+        // Implement your logic to filter products based on the search query
+        // For simplicity, let's assume that filtering is case-insensitive and matches category names
+        for (Map.Entry<String, ProductDetails> entry : productDetailsMap.entrySet()) {
+            if (entry.getValue().getCategory().toLowerCase().contains(searchQuery.toLowerCase())) {
+                filteredProducts.put(entry.getKey(), entry.getValue());
+            }
+        }
+
+        return filteredProducts;
+    }
 }
+
+

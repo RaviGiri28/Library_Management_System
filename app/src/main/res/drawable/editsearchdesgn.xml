@@ -7,8 +7,10 @@
         </shape>
     </item>
     <item android:right="8dp">
-        <bitmap android:src="@android:drawable/ic_menu_search"/> <!-- Search icon -->
-        android:tint="@android:color/darker_gray" <!-- Tint color for the icon -->
+        <color
+        android:tint="@android:color/darker_gray">
+        </color> <!-- Tint color for the icon -->
+        <shape
         android:gravity="center" />
     </item>
 </layer-list>

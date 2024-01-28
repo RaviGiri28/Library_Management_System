@@ -15,6 +15,39 @@
         android:theme="@style/Theme.LibraryManagementSystem"
         tools:targetApi="31">
         <activity
+            android:name=".MasterlistofMovies"
+            android:exported="false" />
+        <activity
+            android:name=".PendingissuesRequests"
+            android:exported="false" />
+        <activity
+            android:name=".OverdueReturns"
+            android:exported="false" />
+        <activity
+            android:name=".MasterlistofBooks"
+            android:exported="false" />
+        <activity
+            android:name=".MasterListofMembership"
+            android:exported="false" />
+        <activity
+            android:name=".ActiveIssues"
+            android:exported="false" />
+        <activity
+            android:name=".ReturnBookActivity"
+            android:exported="false" />
+        <activity
+            android:name=".IssueBookActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CheckAvailabilityActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ReportsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TransactionsActivity"
+            android:exported="false" />
+        <activity
             android:name=".Admin_home"
             android:exported="false" />
         <activity
