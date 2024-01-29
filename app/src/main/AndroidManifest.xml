@@ -8,12 +8,40 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/splashimg"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/splashimg"
         android:supportsRtl="true"
         android:theme="@style/Theme.LibraryManagementSystem"
         tools:targetApi="31">
+        <activity
+            android:name=".DisplayUserDetailsActivity2"
+            android:exported="false" />
+        <activity
+            android:name=".DisplayUserDetailsActivity"
+            android:exported="false"
+            android:label="User Details" />
+        <activity
+            android:name=".UpdateUser"
+            android:exported="false" />
+        <activity
+            android:name=".UpdateMembership"
+            android:exported="false" />
+        <activity
+            android:name=".AddMembership"
+            android:exported="false" />
+        <activity
+            android:name=".UpdateBook"
+            android:exported="false" />
+        <activity
+            android:name=".AddBook"
+            android:exported="false" />
+        <activity
+            android:name=".AddUser"
+            android:exported="false" />
+        <activity
+            android:name=".MaintainenceActivity"
+            android:exported="false" />
         <activity
             android:name=".MasterlistofMovies"
             android:exported="false" />

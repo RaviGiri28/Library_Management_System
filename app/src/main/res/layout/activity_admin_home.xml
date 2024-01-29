@@ -3,45 +3,69 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
     tools:context=".Admin_home">
 
+    <!-- Content Layout -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
         <!-- Search Bar -->
         <EditText
-            android:id="@+id/searchEditText"
+            android:id="@+id/searchEditText2"
             android:layout_width="330dp"
             android:layout_height="wrap_content"
             android:hint="Search Book"
             android:layout_marginLeft="16dp"
-            android:elevation="8dp"
+            android:elevation="10dp"
+            android:textColorHint="#8A8383"
             android:layout_marginTop="15dp"
             android:textColor="@color/black"
-            android:background="@drawable/editdsgn"
+            android:background="@drawable/editsearchdesgn"
             android:padding="8dp"
             android:imeOptions="actionSearch"
             android:inputType="text"
             android:drawableStart="@android:drawable/ic_menu_search"
             android:drawablePadding="8dp"/>
 
+        <!-- HorizontalScrollView for TableLayout -->
         <HorizontalScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="0dp"
+            android:layout_weight="1">
 
             <TableLayout
                 android:id="@+id/tableLayout2"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="16dp"
-                android:background="#FFFFFF">
+                android:background="#FFFFFF"
+                android:layout_margin="8dp"
+                android:layout_below="@id/searchEditText2"
+                android:layout_marginTop="8dp">
 
-                <!-- Add your TableRows and TextViews here -->
+
+            <!-- Add your TableRows and TextViews here -->
 
             </TableLayout>
         </HorizontalScrollView>
     </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/fragment_container2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_navigation2" />
+    <!-- Bottom Navigation View -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        style="@style/BottomNavigationadmin"
+        app:menu="@menu/bottom_navigation_menu_admin" /> <!-- Set your menu XML file here -->
+
 </RelativeLayout>

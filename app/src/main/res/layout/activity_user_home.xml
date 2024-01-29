@@ -37,12 +37,16 @@
             android:layout_height="0dp"
             android:layout_weight="1">
 
+            <!-- TableLayout -->
             <TableLayout
                 android:id="@+id/tableLayout"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="16dp"
-                android:background="#FFFFFF">
+                android:background="#FFFFFF"
+                android:layout_margin="8dp"
+                android:layout_below="@id/searchEditText"
+                android:layout_marginTop="8dp">
 
                 <!-- Add your TableRows and TextViews here -->
 
@@ -50,11 +54,13 @@
         </HorizontalScrollView>
     </LinearLayout>
 
+    <!-- FrameLayout for fragment container -->
     <FrameLayout
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/bottom_navigation" />
+
     <!-- Bottom Navigation View -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
@@ -62,6 +68,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         style="@style/BottomNavigation"
-        app:menu="@menu/bottom_navigation_menu" /> <!-- Set your menu XML file here -->
+        app:menu="@menu/bottom_navigation_menu" />
 
 </RelativeLayout>

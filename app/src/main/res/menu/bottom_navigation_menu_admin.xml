@@ -7,4 +7,8 @@
         android:id="@+id/navigation_report"
         android:icon="@drawable/baseline_report_24"
         android:title="Report" />
+    <item
+        android:id="@+id/navigation_maintainence"
+        android:icon="@drawable/baseline_admin_panel_settings_24"
+        android:title="Maintainence"/>
 </menu>
