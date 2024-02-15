@@ -15,6 +15,12 @@
         android:theme="@style/Theme.LibraryManagementSystem"
         tools:targetApi="31">
         <activity
+            android:name=".ReturnInfoDialog"
+            android:exported="false" />
+        <activity
+            android:name=".IssueInfoDialog"
+            android:exported="false" />
+        <activity
             android:name=".DisplayAddedBooksActivity"
             android:exported="false" />
         <activity
