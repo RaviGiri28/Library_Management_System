@@ -11,6 +11,8 @@ public class ProductDetails {
     }
 
 
+
+
     public String getCategory() {
         return category;
     }

@@ -42,7 +42,7 @@ public class MaintainenceActivity extends AppCompatActivity {
                         break;
                     case 2:
                         // Return a Book
-                        startActivity(new Intent(MaintainenceActivity.this, UpdateBook.class));
+                        startActivity(new Intent(MaintainenceActivity.this, DisplayAddedBooksActivity.class));
                         break;
                     case 3:
                         // Issue a Book
