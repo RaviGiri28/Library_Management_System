@@ -15,6 +15,8 @@ public class ReportsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reports);
+        getSupportActionBar().setTitle("Report");
+
         String[] TransactionOptions = {"Active Issues", "Master List of Membership", "Master list of Movies","Master list of Books", "Overdue Returns","Pending issues Requests"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
                 this,

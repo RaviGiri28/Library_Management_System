@@ -1,26 +1,25 @@
 package com.example.librarymanagementsystem;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
-import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.TypedValue;
 import android.view.Gravity;
-import android.view.MenuItem;
 import android.widget.EditText;
+import android.widget.HorizontalScrollView;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class Admin_home extends AppCompatActivity {
@@ -31,7 +30,6 @@ public class Admin_home extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_home);
-
 
         // Get product details from the Intent
         String productDetails = getIntent().getStringExtra("productDetails");
@@ -71,11 +69,11 @@ public class Admin_home extends AppCompatActivity {
                     Intent transactionsIntent = new Intent(Admin_home.this, TransactionsActivity.class);
                     startActivity(transactionsIntent);
                     return true;
-                } else if (item.getItemId()==R.id.navigation_report) {
+                } else if (item.getItemId() == R.id.navigation_report) {
                     Intent ReportIntent = new Intent(Admin_home.this, ReportsActivity.class);
                     startActivity(ReportIntent);
                     return true;
-                } else if (item.getItemId()==R.id.navigation_maintainence) {
+                } else if (item.getItemId() == R.id.navigation_maintainence) {
                     Intent MaintainenceIntent = new Intent(Admin_home.this, MaintainenceActivity.class);
                     startActivity(MaintainenceIntent);
                 }
@@ -83,6 +81,7 @@ public class Admin_home extends AppCompatActivity {
             });
         }
     }
+
     private void filterProducts(String searchQuery) {
         Map<String, ProductDetails> filteredProducts = ProductDetailRepository.getFilteredProducts(searchQuery);
         clearTableLayout();
@@ -91,36 +90,37 @@ public class Admin_home extends AppCompatActivity {
 
     private void displayFilteredProducts(Map<String, ProductDetails> filteredProducts) {
         TableLayout tableLayout = findViewById(R.id.tableLayout2);
+
         TableRow headerRow = new TableRow(this);
         TextView headerFrom = new TextView(this);
         headerFrom.setText("Code No From");
-        headerFrom.setTextColor(Color.WHITE);
+        headerFrom.setTextColor(getResources().getColor(android.R.color.white));
         headerFrom.setPadding(16, 16, 16, 16);
-        headerFrom.setBackgroundColor(Color.parseColor("#CCCCCC"));
+        headerFrom.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
         headerRow.addView(headerFrom);
 
         // Display "Code No To"
         TextView headerTo = new TextView(this);
         headerTo.setText("Code No To");
-        headerTo.setTextColor(Color.WHITE);
+        headerTo.setTextColor(getResources().getColor(android.R.color.white));
         headerTo.setPadding(16, 16, 16, 16);
-        headerTo.setBackgroundColor(Color.parseColor("#CCCCCC"));
+        headerTo.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
         headerRow.addView(headerTo);
 
         // Display "Category"
         TextView headerCategory = new TextView(this);
         headerCategory.setText("Category");
-        headerCategory.setTextColor(Color.WHITE);
+        headerCategory.setTextColor(getResources().getColor(android.R.color.white));
         headerCategory.setPadding(16, 16, 16, 16);
-        headerCategory.setBackgroundColor(Color.parseColor("#CCCCCC"));
+        headerCategory.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
         headerRow.addView(headerCategory);
 
         // Display "Product Details"
         TextView headerDetails = new TextView(this);
         headerDetails.setText("Details");
-        headerDetails.setTextColor(Color.WHITE);
+        headerDetails.setTextColor(getResources().getColor(android.R.color.black));
         headerDetails.setPadding(16, 16, 16, 16);
-        headerDetails.setBackgroundColor(Color.parseColor("#CCCCCC"));
+        headerDetails.setBackgroundColor(getResources().getColor(android.R.color.transparent));
         headerRow.addView(headerDetails);
 
         tableLayout.addView(headerRow);
@@ -129,49 +129,59 @@ public class Admin_home extends AppCompatActivity {
         if (filteredProducts.isEmpty()) {
             TextView notFoundTextView = new TextView(this);
             notFoundTextView.setText("No matching products found");
-            notFoundTextView.setTextColor(Color.WHITE);
+            notFoundTextView.setTextColor(getResources().getColor(android.R.color.black));
             notFoundTextView.setPadding(16, 16, 16, 16);
-            notFoundTextView.setBackgroundColor(Color.TRANSPARENT);
+            notFoundTextView.setBackgroundColor(getResources().getColor(android.R.color.transparent));
             tableLayout.addView(notFoundTextView);
         } else {
             // Display the filtered products
             for (Map.Entry<String, ProductDetails> entry : filteredProducts.entrySet()) {
                 TableRow tableRow = new TableRow(this);
-                tableRow.setBackgroundColor(Color.TRANSPARENT);
+                tableRow.setBackgroundResource(R.drawable.table_row_border);
+
 
                 // Display "Code No From"
                 TextView codeFromTextView = new TextView(this);
                 codeFromTextView.setText(entry.getKey() + "(B/M)000001");
                 codeFromTextView.setPadding(16, 16, 16, 16);
-                codeFromTextView.setBackgroundColor(Color.TRANSPARENT);
-                tableRow.addView(codeFromTextView);
+                codeFromTextView.setBackgroundColor(getResources().getColor(android.R.color.transparent));
+                tableRow.addView(getHorizontalScrollView(codeFromTextView));
 
                 // Display "Code No To"
                 TextView codeToTextView = new TextView(this);
                 codeToTextView.setText(entry.getKey() + "(B/M)000004");
                 codeToTextView.setPadding(16, 16, 16, 16);
-                codeToTextView.setBackgroundColor(Color.TRANSPARENT);
-                tableRow.addView(codeToTextView);
+                codeToTextView.setBackgroundColor(getResources().getColor(android.R.color.transparent));
+                tableRow.addView(getHorizontalScrollView(codeToTextView));
 
                 // Display "Category"
                 TextView categoryTextView = new TextView(this);
                 categoryTextView.setText(entry.getValue().getCategory());
                 categoryTextView.setPadding(16, 16, 16, 16);
-                categoryTextView.setBackgroundColor(Color.TRANSPARENT);
-                tableRow.addView(categoryTextView);
+                categoryTextView.setBackgroundColor(getResources().getColor(android.R.color.transparent));
+                tableRow.addView(getHorizontalScrollView(categoryTextView));
 
                 // Display "Product Details"
                 TextView detailsTextView = new TextView(this);
                 detailsTextView.setText(entry.getValue().getDetails());
                 detailsTextView.setPadding(16, 16, 16, 16);
-                detailsTextView.setBackgroundColor(Color.TRANSPARENT);
-                tableRow.addView(detailsTextView);
+                detailsTextView.setBackgroundColor(getResources().getColor(android.R.color.transparent));
+                tableRow.addView(getHorizontalScrollView(detailsTextView));
 
                 tableLayout.addView(tableRow);
             }
         }
     }
 
+    private HorizontalScrollView getHorizontalScrollView(TextView textView) {
+        HorizontalScrollView horizontalScrollView = new HorizontalScrollView(this);
+        LinearLayout linearLayout = new LinearLayout(this);
+        linearLayout.setOrientation(LinearLayout.HORIZONTAL);
+        linearLayout.setBackgroundColor(getResources().getColor(android.R.color.transparent));
+        linearLayout.addView(textView);
+        horizontalScrollView.addView(linearLayout);
+        return horizontalScrollView;
+    }
 
     private void clearTableLayout() {
         TableLayout tableLayout = findViewById(R.id.tableLayout2);
@@ -190,12 +200,12 @@ public class Admin_home extends AppCompatActivity {
 
         // Display "Product Details"
         TextView mainHeaderDetails = new TextView(this);
-        mainHeaderDetails.setText("Product Details");
+        mainHeaderDetails.setText("Book Details");
         mainHeaderDetails.setPadding(16, 16, 16, 16);
         mainHeaderDetails.setGravity(Gravity.CENTER);
-        mainHeaderDetails.setBackgroundColor(Color.parseColor("#CCCCCC"));
+        mainHeaderDetails.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
         mainHeaderDetails.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18);
-        mainHeaderDetails.setTextColor(Color.WHITE);
+        mainHeaderDetails.setTextColor(getResources().getColor(android.R.color.white));
         mainHeaderDetails.setTypeface(null, Typeface.BOLD);
         mainHeaderRow.addView(mainHeaderDetails);
 
@@ -208,43 +218,44 @@ public class Admin_home extends AppCompatActivity {
         // Display "Code No From"
         TextView headerFrom = new TextView(this);
         headerFrom.setText("Code No From");
-        headerFrom.setTextColor(Color.WHITE);
+        headerFrom.setTextColor(getResources().getColor(android.R.color.white));
         headerFrom.setPadding(16, 16, 16, 16);
-        headerFrom.setBackgroundColor(Color.parseColor("#CCCCCC")); // Set background color
+        headerFrom.setBackgroundColor(getResources().getColor(R.color.colorPrimary)); // Set background color
         headerRow.addView(headerFrom);
 
         // Display "Code No To"
         TextView headerTo = new TextView(this);
         headerTo.setText("Code No To");
-        headerTo.setTextColor(Color.WHITE);
+        headerTo.setTextColor(getResources().getColor(android.R.color.white));
         headerTo.setPadding(16, 16, 16, 16);
-        headerTo.setBackgroundColor(Color.parseColor("#CCCCCC")); // Set background color
+        headerTo.setBackgroundColor(getResources().getColor(R.color.colorPrimary)); // Set background color
         headerRow.addView(headerTo);
 
         // Display "Category"
         TextView headerCategory = new TextView(this);
         headerCategory.setText("Category");
-        headerCategory.setTextColor(Color.WHITE);
+        headerCategory.setTextColor(getResources().getColor(android.R.color.white));
         headerCategory.setPadding(16, 16, 16, 16);
-        headerCategory.setBackgroundColor(Color.parseColor("#CCCCCC")); // Set background color
+        headerCategory.setBackgroundColor(getResources().getColor(R.color.colorPrimary)); // Set background color
         headerRow.addView(headerCategory);
 
         // Display "Product Details"
         TextView headerDetails = new TextView(this);
         headerDetails.setText("Details");
-        headerDetails.setTextColor(Color.WHITE);
+        headerDetails.setTextColor(getResources().getColor(android.R.color.white));
         headerDetails.setPadding(16, 16, 16, 16);
-        headerDetails.setBackgroundColor(Color.parseColor("#CCCCCC"));
+        headerDetails.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
         headerRow.addView(headerDetails);
 
         tableLayout.addView(headerRow);
+
         // Check if product details are not found
         if (productDetails.equals("N/A\tN/A\tN/A\tProduct details not found")) {
             TextView notFoundTextView = new TextView(this);
             notFoundTextView.setText("Product details not found");
-            notFoundTextView.setTextColor(Color.WHITE);
+            notFoundTextView.setTextColor(getResources().getColor(android.R.color.white));
             notFoundTextView.setPadding(16, 16, 16, 16);
-            notFoundTextView.setBackgroundColor(Color.TRANSPARENT);
+            notFoundTextView.setBackgroundColor(getResources().getColor(android.R.color.transparent));
             tableLayout.addView(notFoundTextView);
         } else {
             // Display the first 5 rows from the product repository
@@ -258,29 +269,29 @@ public class Admin_home extends AppCompatActivity {
                 TextView codeFromTextView = new TextView(this);
                 codeFromTextView.setText(entry.getKey() + "(B/M)000001");
                 codeFromTextView.setPadding(16, 16, 16, 16);
-                codeFromTextView.setBackgroundColor(Color.TRANSPARENT);
-                tableRow.addView(codeFromTextView);
+                codeFromTextView.setBackgroundColor(getResources().getColor(android.R.color.transparent));
+                tableRow.addView(getHorizontalScrollView(codeFromTextView));
 
                 // Display "Code No To"
                 TextView codeToTextView = new TextView(this);
                 codeToTextView.setText(entry.getKey() + "(B/M)000004");
                 codeToTextView.setPadding(16, 16, 16, 16);
-                codeToTextView.setBackgroundColor(Color.TRANSPARENT);
-                tableRow.addView(codeToTextView);
+                codeToTextView.setBackgroundColor(getResources().getColor(android.R.color.transparent));
+                tableRow.addView(getHorizontalScrollView(codeToTextView));
 
                 // Display "Category"
                 TextView categoryTextView = new TextView(this);
                 categoryTextView.setText(entry.getValue().getCategory());
                 categoryTextView.setPadding(16, 16, 16, 16);
-                categoryTextView.setBackgroundColor(Color.TRANSPARENT);
-                tableRow.addView(categoryTextView);
+                categoryTextView.setBackgroundColor(getResources().getColor(android.R.color.transparent));
+                tableRow.addView(getHorizontalScrollView(categoryTextView));
 
                 // Display "Product Details"
                 TextView detailsTextView = new TextView(this);
                 detailsTextView.setText(entry.getValue().getDetails());
                 detailsTextView.setPadding(16, 16, 16, 16);
-                detailsTextView.setBackgroundColor(Color.TRANSPARENT);
-                tableRow.addView(detailsTextView);
+                detailsTextView.setBackgroundColor(getResources().getColor(android.R.color.transparent));
+                tableRow.addView(getHorizontalScrollView(detailsTextView));
 
                 tableLayout.addView(tableRow);
 
@@ -294,4 +305,3 @@ public class Admin_home extends AppCompatActivity {
         }
     }
 }
-

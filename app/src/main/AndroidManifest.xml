@@ -22,10 +22,12 @@
             android:exported="false" />
         <activity
             android:name=".DisplayAddedBooksActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/MaintenanceTheme"/>
         <activity
             android:name=".DisplayBooksActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/MaintenanceTheme"/>
         <activity
             android:name=".DisplayUserDetailsActivity2"
             android:exported="false" />
@@ -44,16 +46,19 @@
             android:exported="false" />
         <activity
             android:name=".UpdateBook"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/MaintenanceTheme"/>
         <activity
             android:name=".AddBook"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/MaintenanceTheme"/>
         <activity
             android:name=".AddUser"
             android:exported="false" />
         <activity
             android:name=".MaintainenceActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/MaintenanceTheme"/>
         <activity
             android:name=".MasterlistofMovies"
             android:exported="false" />
@@ -83,10 +88,12 @@
             android:exported="false" />
         <activity
             android:name=".ReportsActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/MaintenanceTheme"/>
         <activity
             android:name=".TransactionsActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/MaintenanceTheme"/>
         <activity
             android:name=".Admin_home"
             android:exported="false" />

@@ -19,7 +19,7 @@ public class UpdateBook extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_book);
-
+        getSupportActionBar().setTitle("Update Book");
         updateTitleEditText = findViewById(R.id.updateTitleEditText);
         updateAuthorEditText = findViewById(R.id.updateAuthorEditText);
         updateIsbnEditText = findViewById(R.id.updateIsbnEditText);

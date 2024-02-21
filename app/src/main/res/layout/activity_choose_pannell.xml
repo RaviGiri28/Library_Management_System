@@ -7,6 +7,7 @@
     android:background="@drawable/chooseimg"
     tools:context=".Choose_pannell">
 
+
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/adminbtn"
         android:layout_width="0dp"

@@ -26,6 +26,10 @@ import java.util.List;
             this.listener = listener;
         }
 
+        public void setBooks(List<Book> books) {
+            this.bookList = books;
+        }
+
         @NonNull
         @Override
         public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -118,6 +122,10 @@ import java.util.List;
                     bookList.remove(position);
                     // Notify the adapter about the item removal
                     notifyItemRemoved(position);
+                    // Update the dataset in the activity
+                    if (bookList.isEmpty()) {
+                        ((DisplayAddedBooksActivity) itemView.getContext()).showNoBooksMessage();
+                    }
                 }
             }
         }

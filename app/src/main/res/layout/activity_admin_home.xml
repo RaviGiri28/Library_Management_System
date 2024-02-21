@@ -4,10 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/white"
+    android:background="#Fffafa"
     tools:context=".Admin_home">
 
-    <!-- Content Layout -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -32,17 +35,13 @@
             android:drawablePadding="8dp"/>
 
         <!-- HorizontalScrollView for TableLayout -->
-        <HorizontalScrollView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1">
 
             <TableLayout
                 android:id="@+id/tableLayout2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="16dp"
-                android:background="#FFFFFF"
+                android:background="#Fffafa"
                 android:layout_margin="8dp"
                 android:layout_below="@id/searchEditText2"
                 android:layout_marginTop="8dp">
@@ -51,8 +50,9 @@
             <!-- Add your TableRows and TextViews here -->
 
             </TableLayout>
-        </HorizontalScrollView>
     </LinearLayout>
+    </ScrollView>
+
 
     <FrameLayout
         android:id="@+id/fragment_container2"

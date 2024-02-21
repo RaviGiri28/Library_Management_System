@@ -15,6 +15,7 @@ public class TransactionsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_transactions);
+        getSupportActionBar().setTitle("Transactions/");
         String[] TransactionOptions = {"Check Book Availability", "Issue a Book", "Return a Book"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
                 this,

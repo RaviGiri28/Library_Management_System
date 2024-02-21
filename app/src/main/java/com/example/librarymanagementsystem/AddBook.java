@@ -17,6 +17,7 @@ public class AddBook extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_book);
+        getSupportActionBar().setTitle("Add Book");
 
         titleEditText = findViewById(R.id.titleEditText);
         authorEditText = findViewById(R.id.authorEditText);
