@@ -82,6 +82,8 @@ public class IssueBookActivity extends AppCompatActivity {
                     // Show the issue information in a dialog
                     IssueInfoDialog issueInfoDialog = new IssueInfoDialog(IssueBookActivity.this, issueInfo);
                     issueInfoDialog.show();
+                    IssuedBook issuedBook = new IssuedBook(studentId, bookId, fromDate, toDate);
+                    IssuedBooksManager.getInstance().addIssuedBook(issuedBook);
                 } else {
                     // Display an error message if validation fails
                     showToast("Please fill in all the fields and select valid dates.");

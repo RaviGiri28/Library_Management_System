@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
 
     <application
         android:allowBackup="true"
@@ -15,6 +16,10 @@
         android:theme="@style/Theme.LibraryManagementSystem"
         tools:targetApi="31">
         <activity
+            android:name=".IssuedBooks"
+            android:exported="false"
+            android:theme="@style/MaintenanceTheme"/>
+        <activity
             android:name=".ReturnInfoDialog"
             android:exported="false" />
         <activity
@@ -23,11 +28,11 @@
         <activity
             android:name=".DisplayAddedBooksActivity"
             android:exported="false"
-            android:theme="@style/MaintenanceTheme"/>
+            android:theme="@style/MaintenanceTheme" />
         <activity
             android:name=".DisplayBooksActivity"
             android:exported="false"
-            android:theme="@style/MaintenanceTheme"/>
+            android:theme="@style/MaintenanceTheme" />
         <activity
             android:name=".DisplayUserDetailsActivity2"
             android:exported="false" />
@@ -47,18 +52,18 @@
         <activity
             android:name=".UpdateBook"
             android:exported="false"
-            android:theme="@style/MaintenanceTheme"/>
+            android:theme="@style/MaintenanceTheme" />
         <activity
             android:name=".AddBook"
             android:exported="false"
-            android:theme="@style/MaintenanceTheme"/>
+            android:theme="@style/MaintenanceTheme" />
         <activity
             android:name=".AddUser"
             android:exported="false" />
         <activity
             android:name=".MaintainenceActivity"
             android:exported="false"
-            android:theme="@style/MaintenanceTheme"/>
+            android:theme="@style/MaintenanceTheme" />
         <activity
             android:name=".MasterlistofMovies"
             android:exported="false" />
@@ -89,11 +94,11 @@
         <activity
             android:name=".ReportsActivity"
             android:exported="false"
-            android:theme="@style/MaintenanceTheme"/>
+            android:theme="@style/MaintenanceTheme" />
         <activity
             android:name=".TransactionsActivity"
             android:exported="false"
-            android:theme="@style/MaintenanceTheme"/>
+            android:theme="@style/MaintenanceTheme" />
         <activity
             android:name=".Admin_home"
             android:exported="false" />

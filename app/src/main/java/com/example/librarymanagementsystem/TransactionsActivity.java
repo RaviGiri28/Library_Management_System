@@ -12,11 +12,12 @@ import android.widget.ListView;
 public class TransactionsActivity extends AppCompatActivity {
 
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_transactions);
-        getSupportActionBar().setTitle("Transactions/");
-        String[] TransactionOptions = {"Check Book Availability", "Issue a Book", "Return a Book"};
+        getSupportActionBar().setTitle("Transactions");
+        String[] TransactionOptions = {"Check Book Availability", "Issue a Book", "Return a Book","Check Issued Books"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
                 this,
                 R.layout.list_item_library_operation_txt, // Use the custom layout
@@ -45,6 +46,10 @@ public class TransactionsActivity extends AppCompatActivity {
                     case 2:
                         // Return a Book
                         startActivity(new Intent(TransactionsActivity.this, ReturnBookActivity.class));
+                        break;
+                    case 3:
+                        // Return a Book
+                        startActivity(new Intent(TransactionsActivity.this, IssuedBooks.class));
                         break;
                 }
             }

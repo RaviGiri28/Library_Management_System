@@ -53,6 +53,7 @@ public class ReturnBookActivity extends AppCompatActivity {
                     String successMessage = "Book successfully returned by Student ID: " + studentId +
                             "\nBook ID: " + bookId +
                             "\nReturned Date: " + returnedDate;
+                    IssuedBooksManager.getInstance().removeIssuedBook(studentId, bookId);
                     showReturnInfoDialog(successMessage);
                 } else {
                     // Display an error message if validation fails
