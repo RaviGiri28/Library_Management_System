@@ -10,4 +10,9 @@
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
     <string name="title_activity_admin_login">Admin_login</string>
+    <string-array name="dropdown_options">
+        <item>ISTE Membership</item>
+        <item>Gold Book Memberhip</item>
+        <item>Silver Zone Membership</item>
+    </string-array>
 </resources>

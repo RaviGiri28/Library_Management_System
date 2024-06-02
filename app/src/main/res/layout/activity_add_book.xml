@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:padding="16dp"
-    android:background="#DCBDF8CE"
+    android:background="#F8F8F8F8"
     tools:context=".AddBook">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -17,8 +17,9 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-medium"
+            android:fontFamily="serif"
             android:text="Add Book"
+            android:layout_marginTop="-11dp"
             android:textColor="@color/black"
             android:textSize="35dp"
             android:textStyle="bold"
@@ -36,8 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         app:cardCornerRadius="8dp"
-        app:cardBackgroundColor="@color/white"
-        app:cardElevation="8dp">
+        app:cardBackgroundColor="@color/white">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -50,6 +50,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Title"
+                android:textColorHint="#858181"
                 android:textColor="@color/black"
                 android:padding="8dp"/>
 
@@ -59,6 +60,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:hint="Author"
+                android:textColorHint="#858181"
                 android:textColor="@color/black"
                 android:padding="8dp"/>
 
@@ -68,6 +70,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:hint="Book Number"
+                android:textColorHint="#858181"
                 android:textColor="@color/black"
                 android:inputType="number"
                 android:padding="8dp"/>

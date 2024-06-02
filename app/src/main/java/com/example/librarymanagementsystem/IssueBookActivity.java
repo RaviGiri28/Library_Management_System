@@ -25,6 +25,7 @@ public class IssueBookActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_issue_book);
+        getSupportActionBar().setTitle("Book Issue");
 
         // Initialize views
         EditText editTextStudentId = findViewById(R.id.editTextStudentId);

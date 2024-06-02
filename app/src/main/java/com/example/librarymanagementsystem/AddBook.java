@@ -28,9 +28,16 @@ public class AddBook extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Get the book details
-                String title = titleEditText.getText().toString();
-                String author = authorEditText.getText().toString();
-                String isbn = isbnEditText.getText().toString();
+                String title = titleEditText.getText().toString().trim();
+                String author = authorEditText.getText().toString().trim();
+                String isbn = isbnEditText.getText().toString().trim();
+
+                // Validate the input fields
+                if (title.isEmpty() || author.isEmpty() || isbn.isEmpty()) {
+                    // Show a warning message if any field is empty
+                    Toast.makeText(AddBook.this, "All fields are required!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
                 // Create a new Book instance using the constructor
                 Book newBook = new Book(title, author, isbn);

@@ -1,0 +1,61 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#F8F8F8"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".MembershipAddedActivity">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardBackgroundColor="@color/white"
+        android:elevation="8dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/textViewStudentId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Student ID: "
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:id="@+id/textViewStudentName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Student Name: "
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:layout_below="@id/textViewStudentId"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:id="@+id/textViewBranch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Branch: "
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:layout_below="@id/textViewStudentName"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:id="@+id/textViewMembershipType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Membership Type: "
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:layout_below="@id/textViewBranch"/>
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

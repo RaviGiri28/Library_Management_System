@@ -23,7 +23,7 @@ import java.util.List;
 
         public BookAdapter(List<Book> bookList, OnItemClickListener listener) {
             this.bookList = bookList;
-            this.listener = listener;
+            this.listener = null;
         }
 
         public void setBooks(List<Book> books) {

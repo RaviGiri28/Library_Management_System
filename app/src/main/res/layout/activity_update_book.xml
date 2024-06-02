@@ -3,25 +3,28 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="16dp"
-    android:background="#C3EDA2A2">
+    android:background="#F8F8F8F8">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="65dp"
         android:layout_marginTop="150dp">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-medium"
+            android:fontFamily="serif"
             android:text="Update Book"
             android:textColor="@color/black"
             android:textSize="35dp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
@@ -31,6 +34,7 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         app:cardBackgroundColor="@color/white"
+        android:layout_marginTop="70dp"
         app:cardCornerRadius="8dp"
         app:cardElevation="8dp">
 

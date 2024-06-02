@@ -4,24 +4,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    android:background="#D2EBCAED"
+    android:background="#FFEFD5"
     tools:context=".ReturnBookActivity">
 
-    <TextView
-        android:id="@+id/Returnheadingg"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Return Book"
-        android:textSize="20dp"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:layout_marginBottom="16dp"/>
+<!--    <TextView-->
+<!--        android:id="@+id/Returnheadingg"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Return Book"-->
+<!--        android:textSize="20dp"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textStyle="bold"-->
+<!--        android:layout_marginBottom="16dp"/>-->
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardViewBookDetailss"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/Returnheadingg"
         android:layout_marginBottom="16dp"
         app:cardCornerRadius="8dp"
         app:cardBackgroundColor="@color/white"

@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/isteMembership"
+        android:title="ISTE Membership" />
+    <item android:id="@+id/goldenBook"
+        android:title="Gold Book Membership" />
+    <item android:id="@+id/silverBook"
+        android:title="Silver Book Membership" />
+    <item android:id="@+id/bronzeBook"
+        android:title="Bronze Book Membership" />
+</menu>

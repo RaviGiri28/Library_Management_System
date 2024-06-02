@@ -7,6 +7,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.TypedValue;
 import android.view.Gravity;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
@@ -17,6 +18,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -30,6 +32,7 @@ public class Admin_home extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_home);
+        getSupportActionBar().setTitle("Admin Pannel");
 
         // Get product details from the Intent
         String productDetails = getIntent().getStringExtra("productDetails");
@@ -40,6 +43,46 @@ public class Admin_home extends AppCompatActivity {
         setSearchTextWatcher();
         bottomNavigationView2 = findViewById(R.id.bottom_navigation2);
         setBottomNavigationListener();
+
+        CardView addBookCardView = findViewById(R.id.cardView1);
+        CardView addMembershipCardView = findViewById(R.id.cardView2);
+        CardView issueBookCardView = findViewById(R.id.cardView3);
+        CardView checkBookAvailability = findViewById(R.id.cardView4);
+
+        checkBookAvailability.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Start AddBookActivity
+                Intent addBookIntent = new Intent(Admin_home.this, CheckAvailabilityActivity.class);
+                startActivity(addBookIntent);
+            }
+        });
+
+        issueBookCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Start AddBookActivity
+                Intent addBookIntent = new Intent(Admin_home.this, IssueBookActivity.class);
+                startActivity(addBookIntent);
+            }
+        });
+
+        addMembershipCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Start AddBookActivity
+                Intent addBookIntent = new Intent(Admin_home.this, AddMembership.class);
+                startActivity(addBookIntent);
+            }
+        });
+        addBookCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Start AddBookActivity
+                Intent addBookIntent = new Intent(Admin_home.this, AddBook.class);
+                startActivity(addBookIntent);
+            }
+        });
     }
 
     private void setSearchTextWatcher() {

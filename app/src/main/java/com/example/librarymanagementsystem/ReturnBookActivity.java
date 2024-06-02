@@ -21,6 +21,7 @@ public class ReturnBookActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_return_book);
+        getSupportActionBar().setTitle("Return Book");
 
         // Initialize views
         editTextStudentId = findViewById(R.id.editTextStudentId);

@@ -20,6 +20,7 @@ public class UpdateUser extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_user);
+        getSupportActionBar().setTitle("Update User");
 
         // Initialize views
         editTextFullNameUpdate = findViewById(R.id.editTextFullNameUpdate);
@@ -57,13 +58,23 @@ public class UpdateUser extends AppCompatActivity {
         String username = editTextUsernameUpdate.getText().toString().trim();
         String email = editTextEmailUpdate.getText().toString().trim();
 
-        // Validate user input (add your validation logic)
+        // Validate user input
+        if (fullName.isEmpty() || username.isEmpty() || email.isEmpty()) {
+            Toast.makeText(this, "All fields are required!", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
         // Perform user update (add your update logic)
 
         // For this example, just show a toast message
         Toast.makeText(this, "User updated successfully!", Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, "User added successfully!", Toast.LENGTH_SHORT).show();
+
+        // Clear the EditText fields
+        editTextFullNameUpdate.setText("");
+        editTextUsernameUpdate.setText("");
+        editTextEmailUpdate.setText("");
+
+        // Start the new activity to display updated user details
         Intent intent = new Intent(UpdateUser.this, DisplayUserDetailsActivity.class);
         intent.putExtra("FULL_NAME", fullName);
         intent.putExtra("USERNAME", username);

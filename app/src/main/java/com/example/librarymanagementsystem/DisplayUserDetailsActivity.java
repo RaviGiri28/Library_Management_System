@@ -13,6 +13,7 @@ public class DisplayUserDetailsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_user_details);
+        getSupportActionBar().setTitle("User Details");
 
         // Initialize views
         textViewFullName = findViewById(R.id.textViewFullName);

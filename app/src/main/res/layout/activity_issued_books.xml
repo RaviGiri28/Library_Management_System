@@ -15,7 +15,7 @@
         android:textColor="@color/black"
         android:visibility="gone"
         android:textSize="18dp"
-        android:textStyle="bold" />
+        />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewIssuedBooks"
