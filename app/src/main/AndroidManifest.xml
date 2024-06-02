@@ -125,6 +125,7 @@
             android:theme="@style/MaintenanceTheme" />
         <activity
             android:name=".User_home"
+            android:theme="@style/MaintenanceTheme"
             android:exported="false" />
         <activity
             android:name=".User_Login"

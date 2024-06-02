@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:padding="16dp"
-    android:background="#F8F8F8F8"
+    android:background="@drawable/contentbg"
     tools:context=".AddBook">
 
     <androidx.constraintlayout.widget.ConstraintLayout

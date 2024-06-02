@@ -29,6 +29,7 @@ public class User_home extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_home);
+        getSupportActionBar().setTitle("User Pannel");
 
 
         // Get product details from the Intent
